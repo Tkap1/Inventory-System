@@ -1,6 +1,8 @@
 # Inventory System
 Basic ARPG inventory system
 
+!(https://i.imgur.com/jx3kdXZ.gif)
+
 # Building
 Open a terminal
 
