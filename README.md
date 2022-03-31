@@ -1,5 +1,5 @@
 # Inventory System
-Basic ARPG inventory system
+Basic ARPG inventory system. Using raylib (https://github.com/raysan5/raylib) for drawing
 
 ![](https://i.imgur.com/jx3kdXZ.gif)
 
