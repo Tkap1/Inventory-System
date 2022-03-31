@@ -7,8 +7,6 @@
 // @Note(tkap): Used for "memset"
 #include <string.h>
 
-#include "raylib.h"
-
 typedef uint8_t u8;
 typedef uint32_t u32;
 typedef u8 b8;
@@ -81,6 +79,8 @@ typedef u8 b8;
 	#define m_assert(cond)
 	#define m_assert_range(n, low, high)
 #endif
+
+#include "raylib.h"
 
 #define m_zero {}
 #define m_null NULL
