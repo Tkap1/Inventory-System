@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include <math.h>
 
+// @Note(tkap): Used for "memset"
+#include <string.h>
+
 #include "raylib.h"
 
 typedef uint8_t u8;
@@ -71,11 +74,14 @@ typedef u8 b8;
 			ExitProcess(1); \
 		} \
 	}
+
+	#define m_assert_range(n, low, high) m_assert((n) >= (low) && (n) <= (high))
+
 #else
 	#define m_assert(cond)
+	#define m_assert_range(n, low, high)
 #endif
 
-#define m_assert_range(n, low, high) m_assert((n) >= (low) && (n) <= (high))
 #define m_zero {}
 #define m_null NULL
 #define m_between(val, low, high) ((val) >= (low) && (val) <= (high))
