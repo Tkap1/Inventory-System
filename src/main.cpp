@@ -310,22 +310,22 @@ int main()
 
 		b8 left_pressed = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 
-		static constexpr int full_slot_size = slot_size + slot_separation;
+		static constexpr int full_c_inventory_slot_size = c_inventory_slot_size + c_inventory_slot_separation;
 
 		Vector2 mouse = GetMousePosition();
 
 		s_v2i mouse_inventory_index = {
-			(int)round(-inventory_x + mouse.x) / full_slot_size,
-			(int)round(-inventory_y + mouse.y) / full_slot_size
+			(int)round(-c_inventory_x + mouse.x) / full_c_inventory_slot_size,
+			(int)round(-c_inventory_y + mouse.y) / full_c_inventory_slot_size
 		};
 
 		for(int y = 0; y < c_inventory_height; y++)
 		{
 			for(int x = 0; x < c_inventory_width; x++)
 			{
-				int x_pos = inventory_x + x * (slot_size + slot_separation);
-				int y_pos = inventory_y + y * (slot_size + slot_separation);
-				DrawRectangle(x_pos, y_pos, slot_size, slot_size, c_inventory_slot_color);
+				int x_pos = c_inventory_x + x * (c_inventory_slot_size + c_inventory_slot_separation);
+				int y_pos = c_inventory_y + y * (c_inventory_slot_size + c_inventory_slot_separation);
+				DrawRectangle(x_pos, y_pos, c_inventory_slot_size, c_inventory_slot_size, c_inventory_slot_color);
 			}
 		}
 
@@ -336,8 +336,8 @@ int main()
 			for(int x = 0; x < c_inventory_width; x++)
 			{
 				Vector2 pos = {
-					(float)(inventory_x + x * full_slot_size),
-					(float)(inventory_y + y * full_slot_size)
+					(float)(c_inventory_x + x * full_c_inventory_slot_size),
+					(float)(c_inventory_y + y * full_c_inventory_slot_size)
 				};
 
 				if(inventory.occupied[y][x])
@@ -345,8 +345,8 @@ int main()
 					s_item* item = &inventory.items[y][x];
 
 					Vector2 size = {
-						(float)(full_slot_size * item->width),
-						(float)(full_slot_size * item->height)
+						(float)(full_c_inventory_slot_size * item->width),
+						(float)(full_c_inventory_slot_size * item->height)
 					};
 
 					DrawRectangleV(pos, size, c_item_background_color);
@@ -387,13 +387,13 @@ int main()
 			mouse_inventory_index_with_offset.y += picked_item_offset.y;
 
 			Vector2 pos = {
-				(float)(inventory_x + mouse_inventory_index_with_offset.x * full_slot_size),
-				(float)(inventory_y + mouse_inventory_index_with_offset.y * full_slot_size)
+				(float)(c_inventory_x + mouse_inventory_index_with_offset.x * full_c_inventory_slot_size),
+				(float)(c_inventory_y + mouse_inventory_index_with_offset.y * full_c_inventory_slot_size)
 			};
 
 			Vector2 size = {
-				(float)(full_slot_size * picked_item.width),
-				(float)(full_slot_size * picked_item.height)
+				(float)(full_c_inventory_slot_size * picked_item.width),
+				(float)(full_c_inventory_slot_size * picked_item.height)
 			};
 
 			DrawRectangleV(pos, size, c_item_background_color);

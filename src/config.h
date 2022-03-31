@@ -7,10 +7,10 @@ static constexpr int c_inventory_height = 5;
 // @Note(tkap): This should be equal to the biggest item's width * height
 static constexpr int c_max_add_item_results = 8;
 
-static constexpr int slot_separation = 2;
-static constexpr int slot_size = 30;
-static constexpr int inventory_x = c_window_width / 2 - (c_inventory_width * (slot_separation + slot_size) / 2);
-static constexpr int inventory_y = c_window_height / 2 - (c_inventory_height * (slot_separation + slot_size) / 2);
+static constexpr int c_inventory_slot_separation = 2;
+static constexpr int c_inventory_slot_size = 30;
+static constexpr int c_inventory_x = c_window_width / 2 - (c_inventory_width * (c_inventory_slot_separation + c_inventory_slot_size) / 2);
+static constexpr int c_inventory_y = c_window_height / 2 - (c_inventory_height * (c_inventory_slot_separation + c_inventory_slot_size) / 2);
 
 static constexpr Color c_inventory_slot_color = hex3_to_color(0x088897);
 static constexpr Color c_background_color = RAYWHITE;
